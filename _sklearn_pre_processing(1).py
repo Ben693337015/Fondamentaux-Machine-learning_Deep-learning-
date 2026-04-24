@@ -25,7 +25,7 @@ X = np.array([['chat', 'poils'],
 encoder = OrdinalEncoder()
 encoder.fit_transform(X)
 
-encoder = OneHotEncoder(sparse=False)
+encoder = OneHotEncoder(sparse_output=False)
 encoder.fit_transform(X)
 
 """## 2. Normalisation"""

@@ -49,7 +49,9 @@ from sklearn.linear_model import SGDClassifier
 selector = RFECV(SGDClassifier(random_state=0), step=1, min_features_to_select=2, cv=5)
 selector.fit(X, y)
 print(selector.ranking_)
-print(selector.grid_scores_)
+# Utilise la clé 'mean_test_score' dans le nouveau dictionnaire cv_results_
+print(selector.cv_results_['mean_test_score'])
+#print(selector.cv_results_)
 
 np.array(iris.feature_names)[selector.get_support()]
 
